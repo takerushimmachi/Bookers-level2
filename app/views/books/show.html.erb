@@ -1,0 +1,34 @@
+<h2>User info</h2>
+
+<div class="user-edit-image">
+    <%= attachment_image_tag @user, :profile_image, :fill, 10, 10,fallback: "no_image.jpg",size:'200x200'%>
+  </div>
+
+<div class="profile-container">
+  <h3><%= @user.name %></h3>
+  <h3><%= @user.introduction %></h3>
+
+  <% if @user.id == current_user.id %>
+    <p><%= link_to "プロフィール編集", edit_user_path(@user),  class: "pull-right" %></p>
+  <% end %>
+</div>
+
+<h2>New book</h2>
+
+<%= form_for(@createbook) do |f| %>
+<%= render 'layouts/error', model: f.object %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  <h4>Opinion</h4>
+  <%= f.text_field :body %>
+
+  <%= f.submit 'Create Book' %>
+<% end %>
+
+<h1>Book detail</h1>
+
+<%= @book.title %>
+<%= @book.body %>
+<td><%= link_to 'Edit', edit_book_path(@book.id), class:"edit_#{@book.id}" %></td>
+        <td><%= link_to 'Destroy', book_path(@book.id), method: :delete,  data: { confirm: "Are you sure?" } %></td>
+
