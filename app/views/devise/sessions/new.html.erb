@@ -1,19 +1,4 @@
 <body>
-    <header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="container">
-    <nav class='nav navbar-nav navbar-left' >
-      <h2>Bookers</h2>
-    </nav>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-          <li><%= link_to 'Home',new_user_session_path, class: "glyphicon glyphicon-home" %></li>
-          <li><%= link_to 'About',homes_about_path, class: "glyphicon glyphicon-link" %></li>
-          <li><%= link_to "sign up", new_user_registration_path, class: "glyphicon glyphicon-edit" %></li>
-          <li><%= link_to "login", user_session_path,class: "glyphicon glyphicon-log-in" %></li>
-      </ul>
-    </nav>
-  </div>
-</header>
 <div class="container">
         <div class="row">
             <div class="col-md-4 col-md-offset-4">
@@ -39,7 +24,7 @@
       <%= f.password_field :password, autocomplete: "off", class:"form-control", id:"inputPassword", placeholder:"Password" %>
       <span class="fa fa-lock form-control-icon" aria-hidden="true"></span>
     </div>
-    <%= f.submit "log in", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
+    <%= f.submit "Log in", class:"btn btn-lg btn-block btn-base-1 mt-20" %>
   <% end %>
 
                     </div>

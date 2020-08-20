@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
   def top
-   @home = homes_top_path
+   @home = home_top_path
   end
 
   def about
